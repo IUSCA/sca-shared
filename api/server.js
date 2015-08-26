@@ -17,19 +17,12 @@ var controllers = require('./controllers');
 var app = express();
 app.use(bodyParser.json()); 
 app.use(expressWinston.logger(config.logger.winston));
-
-//jwt auth is optional
-if(config.express.jwt) app.use(require('express-jwt')(config.express.jwt));
+app.use(require('express-jwt')(config.express.jwt));
 
 //setup routes
 app.get('/health', function(req, res) { res.json({status: 'running'}); });
-app.get('/status', controllers.status);
-
-/*
-app.get('/test', function(req, res) {
-    throw new Error("test error");
-});
-*/
+//app.get('/menu/:id', controllers.menu);
+app.get('/menu', controllers.menu);
 
 //error handling
 app.use(expressWinston.errorLogger(config.logger.winston)); 
@@ -41,9 +34,8 @@ app.use(function(err, req, res, next) {
 exports.app = app;
 exports.start = function(cb) {
     var port = process.env.PORT || config.express.port || '8080';
-    controllers.init(function() {
-        app.listen(port);
-        console.log("ISDP request handler listening on port %d in %s mode", port, app.settings.env);
+    app.listen(port, function() {
+        console.log("settings server listening on port %d in %s mode", port, app.settings.env);
         cb();
     });
 };

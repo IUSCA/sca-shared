@@ -1,8 +1,7 @@
 {
-  "name": "sca-progress",
+  "name": "sca-shared",
   "version": "0.0.1",
-  "description": "SCA progress service",
-  "main": "index.js",
+  "description": "SCA shared service",
   "directories": {
     "test": "test"
   },
@@ -11,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:soichih/sca-progress.git"
+    "url": "git@github.com:soichih/sca-setting.git"
   },
   "keywords": [
     "SCA",
@@ -27,14 +26,11 @@
     "supertest": "~1.0.1",
     "async": "~1.4.2",
     "express-winston": "~0.3.1",
-    "redis": "~0.12.1",
-    "amqp": "~0.2.4"
+    "amqp": "~0.2.4",
+    "underscore": "~1.8.3"
   },
   "devDependencies": {
     "chai": "~3.2.0",
-    "node-uuid": "~1.4.3",
-    "grunt": "~0.4.5",
-    "grunt-contrib-less": "~1.0.1",
-    "grunt-contrib-watch": "~0.6.1"
+    "node-uuid": "~1.4.3"
   }
 }
