@@ -1,0 +1,36 @@
+
+ul.sca-menubar {
+    list-style: none;
+    padding-left: 25px;
+    margin: 0px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+
+    li {
+        font-weight: bold;
+        display: inline-block;
+        padding: 10px 15px;
+        border-bottom: 3px solid white;
+        cursor: pointer;
+        color: #aaa;
+
+        transition: border-color 0.5s ease-in-out;
+        transition: color 0.5s ease-in-out;
+
+        &:hover {
+            /*
+            border-color: #eee;
+            */
+            color: #555;
+        }
+        &.active {
+            border-color: #008cba;
+            color: #008cba;
+        }
+        &:not(:first-child) {
+            /*
+            border-left: 1px solid gray;
+            */
+        }
+    }
+}
