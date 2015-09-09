@@ -17,11 +17,11 @@ var controllers = require('./controllers');
 var app = express();
 app.use(bodyParser.json()); 
 app.use(expressWinston.logger(config.logger.winston));
-app.use(require('express-jwt')(config.express.jwt));
+
+if(config.express.jwt) app.use(require('express-jwt')(config.express.jwt));
 
 //setup routes
 app.get('/health', function(req, res) { res.json({status: 'running'}); });
-//app.get('/menu/:id', controllers.menu);
 app.get('/menu', controllers.menu);
 
 //error handling
@@ -34,9 +34,9 @@ app.use(function(err, req, res, next) {
 exports.app = app;
 exports.start = function(cb) {
     var port = process.env.PORT || config.express.port || '8080';
-    app.listen(port, function() {
+    app.listen(port, function(err) {
         console.log("settings server listening on port %d in %s mode", port, app.settings.env);
-        cb();
+        cb(err);
     });
 };
 

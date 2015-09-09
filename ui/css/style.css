@@ -1,11 +1,11 @@
-ul.sca-menubar {
+ul.sca-menutab {
   list-style: none;
   padding-left: 25px;
   margin: 0px;
   border-bottom: 1px solid #ccc;
   margin-bottom: 10px;
 }
-ul.sca-menubar li {
+ul.sca-menutab li {
   font-weight: bold;
   display: inline-block;
   padding: 10px 15px;
@@ -13,20 +13,23 @@ ul.sca-menubar li {
   cursor: pointer;
   color: #aaa;
   transition: border-color 0.5s ease-in-out;
-  transition: color 0.5s ease-in-out;
 }
-ul.sca-menubar li:hover {
-  /*
-            border-color: #eee;
-            */
-  color: #555;
+ul.sca-menutab li:hover {
+  border-color: #008cba;
+  /*color: #555;*/
 }
-ul.sca-menubar li.active {
+ul.sca-menutab li.active {
   border-color: #008cba;
   color: #008cba;
 }
-ul.sca-menubar li:not(:first-child) {
+ul.sca-menutab li:not(:first-child) {
   /*
             border-left: 1px solid gray;
             */
+}
+nav.sca-menubar {
+  margin-bottom: 0px;
+}
+span.sca-item-icon img {
+  margin-right: 6px;
 }
