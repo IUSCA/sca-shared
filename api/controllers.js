@@ -23,7 +23,14 @@ function assert(condition, message) {
 
 exports.menu = function(req, res) {
     //var menuid = req.params.id;
-    res.json(get_menu(config.menus, req.user.scopes));
+    
+    //guest scope
+    var scopes = {
+        common: [],
+    };
+
+    if(req.user) scopes = req.user.scopes;
+    res.json(get_menu(config.menus, scopes));
 }
 
 //get menu items that meets user's scope
@@ -31,7 +38,7 @@ function get_menu(themenus, scopes) {
     var menus = [];
     //search for menu
     themenus.forEach(function(menu) {
-        if(menu.scope && !menu.scope(scopes)) return;
+        if(menu.scope && scopes && !menu.scope(scopes)) return;
         var _menu = _.clone(menu);
         if(_menu.submenu) {
             _menu.submenu = get_menu(_menu.submenu, scopes);

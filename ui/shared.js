@@ -1,6 +1,6 @@
 (function() {
     'use strict';
-    var sca = angular.module('sca', []);
+    var sca = angular.module('sca-shared', []);
 
     /* doesn't work
     //http://stackoverflow.com/questions/21103724/angular-directive-templateurl-relative-to-js-file
@@ -60,11 +60,6 @@
             //templateUrl: dirname().replace('shared.js', 'menubar.html'),
             templateUrl: '../shared/menubar.html', //TODO - make this configurable!
             link: function (scope, element, attrs) {
-                /*
-                scope.go = function(url) {
-                    document.location = url;
-                }
-                */
                 scope.isright = function(page) {
                     if(page.props && page.props.right && page.props.right === true) return true;
                     return false;

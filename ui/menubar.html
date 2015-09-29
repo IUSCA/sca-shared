@@ -6,7 +6,7 @@
     <a href="javascript:void(0)" ng-if="page.submenu" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
         <span ng-if="page.icon" ng-bind-html="page.icon" class="sca-item-icon"></span>
         <span ng-if="page.label">{{page.label}}</span>
-        <span ng-if="page._label" ng-bind-html="renderLabel(page._label)"></span>
+        <span ng-if="page._label">{{renderLabel(page._label)}}</span>
         <span class="caret"></span>
     </a>
     <ul class="dropdown-menu" ng-if="page.submenu">
