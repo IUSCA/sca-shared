@@ -1,5 +1,5 @@
 <ul class="sca-menutab">
-    <li ng-repeat="page in menu.submenu" ng-class="{active: active == page.id}" ng-click="go(page.url)">
+    <li ng-repeat="page in menu" ng-class="{active: active == page.id}" ng-click="go(page.url)">
         {{page.label}}
     </li>
 </ul>

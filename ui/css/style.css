@@ -33,3 +33,16 @@ nav.sca-menubar {
 span.sca-item-icon img {
   margin-right: 6px;
 }
+.navbar-brand .logo {
+  max-height: 35px;
+  position: relative;
+  top: -5px;
+  left: -5px;
+  float: left;
+  margin-right: 10px;
+}
+@media screen and (max-width: 600px) {
+  .navbar-brand .logo {
+    display: none;
+  }
+}

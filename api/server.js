@@ -8,7 +8,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var winston = require('winston');
 var expressWinston = require('express-winston');
-var jwt = require('express-jwt');
+//var jwt = require('express-jwt');
 
 //mine
 var config = require('./config/config');
@@ -21,9 +21,7 @@ app.use(expressWinston.logger(config.logger.winston));
 
 //if(config.express.jwt) app.use(require('express-jwt')(config.express.jwt));
 
-//setup routes
-app.get('/health', function(req, res) { res.json({status: 'running'}); });
-app.get('/menu', jwt({secret: config.express.jwt.secret, credentialsRequired: false}), controllers.menu);
+app.use('/', require('./controllers'));
 
 //error handling
 app.use(expressWinston.errorLogger(config.logger.winston)); 
