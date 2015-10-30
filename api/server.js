@@ -11,7 +11,7 @@ var expressWinston = require('express-winston');
 //var jwt = require('express-jwt');
 
 //mine
-var config = require('./config/config');
+var config = require('./config');
 var controllers = require('./controllers');
 
 //init express app

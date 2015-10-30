@@ -14,7 +14,7 @@ var router = express.Router();
 var jwt = require('express-jwt');
 
 //mine
-var config = require('./config/config');
+var config = require('./config');
 var logger = new winston.Logger(config.logger.winston);
 
 /*
