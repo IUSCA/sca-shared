@@ -135,12 +135,15 @@
       };
     });
 
+    //anyone uses this still?
     sca.directive('scaTab', function() {
       return {
         restrict: 'E',
         transclude: true,
         scope: {menu: '=', active: '='},
-        templateUrl: dirname().replace('shared.js', 'tab.html')
+        templateUrl: dirname().replace('shared.js', 'tab.html'),
+        link: function(scope, element) {
+        }
       };
     });
 
@@ -148,10 +151,16 @@
         return {
             restrict: 'E',
             transclude: true,
-            scope: {menu: '=', active: '='},
+            scope: {menu: '=', active: '=', user: '='},
             //templateUrl: dirname().replace('shared.js', 'menubar.html'),
             templateUrl: '../shared/menutab.html', //TODO - make this configurable!
             link: function (scope, element) {
+                var user_scope = {common: []}; //empty for guest
+                if(scope.user) user_scope = scope.user.scopes;  
+                //call show if it's function and convert to true/false based on user scope provided
+                scope.menu.forEach(function(m) {
+                    if(typeof m.show == 'function') m.show = m.show(user_scope);
+                });
                 scope.go = function(url) {
                     document.location = url;
                 }
