@@ -25,6 +25,7 @@ function assert(condition, message) {
 */
 router.get('/health', function(req, res) { res.json({status: 'running'}); });
 
+/*
 router.get('/menu/:path', jwt({secret: config.express.jwt.secret, credentialsRequired: false}), function(req, res, next) {
     var paths = req.params.path.split(".");
     
@@ -68,14 +69,6 @@ function get_menu(themenus, scopes) {
         menus.push(_menu);
     });
     return menus;
-    /*
-    var key = req.query.key;
-    var depth = req.query.depth || 1;
-
-    get_state(key, depth, function(err, state) {
-        res.json(state);
-    });
-    */
 }
-
+*/
 module.exports = router;

@@ -8,7 +8,6 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var winston = require('winston');
 var expressWinston = require('express-winston');
-//var jwt = require('express-jwt');
 
 //mine
 var config = require('./config');
@@ -18,8 +17,6 @@ var controllers = require('./controllers');
 var app = express();
 app.use(bodyParser.json()); 
 app.use(expressWinston.logger(config.logger.winston));
-
-//if(config.express.jwt) app.use(require('express-jwt')(config.express.jwt));
 
 app.use('/', require('./controllers'));
 
@@ -38,5 +35,4 @@ exports.start = function(cb) {
         cb(err);
     });
 };
-
 

@@ -10,7 +10,9 @@
         <span class="caret"></span>
     </a>
     <ul class="dropdown-menu" ng-if="page.submenu">
-        <li ng-repeat="subpage in page.submenu" ng-class="{active: active == subpage.id, divider: subpage.separator, 'dropdown-header': subpage.header}">
+        <li ng-repeat="subpage in page.submenu" 
+            ng-if="subpage.show != false"
+            ng-class="{active: active == subpage.id, divider: subpage.separator, 'dropdown-header': subpage.header}">
             <a href="{{subpage.url}}" ng-if="subpage.url">
                 {{subpage.label}}
             </a>
@@ -33,7 +35,10 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li ng-repeat="page in menu" ng-if="!isright(page)" ng-class="{active: active == page.id}" ng-include="'menuitem.tmpl'"></li>
+            <li ng-repeat="page in menu" 
+                ng-if="!isright(page) && page.show != false"
+                ng-class="{active: active == page.id}" 
+                ng-include="'menuitem.tmpl'"></li>
             <!--
             <li class="dropdown">
               <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
@@ -50,8 +55,8 @@
             -->
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li ng-repeat="page in menu" ng-if="isright(page)" ng-class="{active: active == page.id}"
-                 ng-click="go(page.url)" ng-include="'menuitem.tmpl'"></li>
+            <li ng-repeat="page in menu" ng-if="isright(page) && page.show != false" ng-class="{active: active == page.id}"
+                ng-click="go(page.url)" ng-include="'menuitem.tmpl'"></li>
             <!--
             <li><a href="../navbar/">Default</a></li>
             <li class="active"><a href="./">Static top <span class="sr-only">(current)</span></a></li>

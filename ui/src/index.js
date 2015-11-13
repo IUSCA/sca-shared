@@ -1,6 +1,9 @@
 (function() {
     'use strict';
-    var sca = angular.module('sca-shared', []);
+    var sca = angular.module('sca-shared', [
+        'sca-shared.menu',
+        //'toaster',
+    ]);
 
     /* doesn't work
     //http://stackoverflow.com/questions/21103724/angular-directive-templateurl-relative-to-js-file
@@ -163,7 +166,7 @@
                 });
                 scope.go = function(url) {
                     document.location = url;
-                }
+                };
             }
         };
     });
@@ -172,20 +175,25 @@
         return {
             restrict: 'E',
             transclude: true,
-            scope: {header: '=', menu: '=', active: '=', profile: '='},
+            scope: {header: '=', menu: '=', user: '=', active: '=', profile: '='},
             //templateUrl: dirname().replace('shared.js', 'menubar.html'),
             templateUrl: '../shared/menubar.html', //TODO - make this configurable!
             link: function (scope, element, attrs) {
+                var user_scope = {common: []}; //empty for guest
+                if(scope.user) user_scope = scope.user.scopes;  
+                scope.menu.forEach(function(m) {
+                    if(typeof m.show == 'function') m.show = m.show(user_scope);
+                });
                 scope.isright = function(page) {
                     if(page.props && page.props.right && page.props.right === true) return true;
                     return false;
-                }
+                };
                 scope.renderLabel = function(props) {
                     if(props.profile && scope.profile && scope.profile[props.profile]) {
                         return scope.profile[props.profile];
                     }
                     return props.default;
-                }
+                };
             }
         };
     });
