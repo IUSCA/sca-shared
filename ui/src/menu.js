@@ -64,7 +64,7 @@
                     url: "/profile",
                 },
                 { separator: true },
-                { header: true, label: "Random Header Here" },
+                //{ header: true, label: "Random Header Here" },
                 {
                     id: "signout",
                     label: "Sign Out",
