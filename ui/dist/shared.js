@@ -15,7 +15,6 @@
             label: "WLCG sLS",
             url: "https://soichi7.ppa.iu.edu/sls/lookup/records"
         },
-
         {
             id: "dicom",
             label: "Dicom QC",
@@ -47,6 +46,19 @@
                 },            
             ] 
         },
+        {
+            id: "sciapt",
+            //icon: "<img src='http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=19'>",
+            label: "SciApt",
+            submenu: [
+                {
+                    id: "mats",
+                    label: "Compute-O-Mat",
+                    url: "/mats",
+                },
+            ] 
+        },
+
 
         {
             id: "user",
@@ -298,6 +310,7 @@
             //templateUrl: dirname().replace('shared.js', 'menubar.html'),
             templateUrl: '../shared/menubar.html', //TODO - make this configurable!
             link: function (scope, element, attrs) {
+                //if(!scope.menu) return; //menu not loaded(yet?)
                 var user_scope = {common: []}; //empty for guest
                 if(scope.user) user_scope = scope.user.scopes;  
                 scope.menu.forEach(function(m) {

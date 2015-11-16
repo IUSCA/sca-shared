@@ -15,7 +15,6 @@
             label: "WLCG sLS",
             url: "https://soichi7.ppa.iu.edu/sls/lookup/records"
         },
-
         {
             id: "dicom",
             label: "Dicom QC",
@@ -47,6 +46,19 @@
                 },            
             ] 
         },
+        {
+            id: "sciapt",
+            //icon: "<img src='http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=19'>",
+            label: "SciApt",
+            submenu: [
+                {
+                    id: "mats",
+                    label: "Compute-O-Mat",
+                    url: "/mats",
+                },
+            ] 
+        },
+
 
         {
             id: "user",

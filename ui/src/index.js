@@ -179,6 +179,7 @@
             //templateUrl: dirname().replace('shared.js', 'menubar.html'),
             templateUrl: '../shared/menubar.html', //TODO - make this configurable!
             link: function (scope, element, attrs) {
+                //if(!scope.menu) return; //menu not loaded(yet?)
                 var user_scope = {common: []}; //empty for guest
                 if(scope.user) user_scope = scope.user.scopes;  
                 scope.menu.forEach(function(m) {
