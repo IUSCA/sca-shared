@@ -85,45 +85,6 @@
         };
     });
 
-    /*
-    //redirecto to whevever user needs to go after auccessful login
-    sca.factory('scaRedirector', function() {
-        
-        function geturls() {
-            var urls_json = sessionStorage.getItem('sca_redirects');
-            var urls = []; //by default, pop back to the document referrer
-            if(urls_json) urls = JSON.parse(urls_json);
-            return urls;
-        }
-
-        function seturls(urls) {
-            sessionStorage.setItem('sca_redirects', JSON.stringify(urls));
-        }
-
-        return {
-            push: function(url, clear) {
-                if(clear) { 
-                    var urls = [url];
-                } else {
-                    var urls = geturls();
-                    urls.push(url);
-                }
-                //if(!url) url = document.referrer;
-                seturls(urls);
-            },
-
-            //you have to do window.location = scaRedirector.pop(); yourself
-            pop: function() {
-                var urls = geturls();
-                var url = urls.pop();
-                //if(!url) return document.referrer; 
-                seturls(urls);
-                return url;
-            }
-        }
-    });
-    */
-
     sca.directive('scaMenulist', function() {
       return {
         restrict: 'E',
@@ -162,7 +123,13 @@
                 if(scope.user) user_scope = scope.user.scopes;  
                 //call show if it's function and convert to true/false based on user scope provided
                 scope.menu.forEach(function(m) {
-                    if(typeof m.show == 'function') m.show = m.show(user_scope);
+                    if(typeof m.show == 'function') {
+                        try {
+                            m.show = m.show(user_scope);
+                        } catch(e) {
+                            m.show = false;
+                        }
+                    }
                 });
                 scope.go = function(url) {
                     document.location = url;
@@ -183,7 +150,13 @@
                 var user_scope = {common: []}; //empty for guest
                 if(scope.user) user_scope = scope.user.scopes;  
                 scope.menu.forEach(function(m) {
-                    if(typeof m.show == 'function') m.show = m.show(user_scope);
+                    if(typeof m.show == 'function') {
+                        try {
+                            m.show = m.show(user_scope);
+                        } catch(e) {
+                            m.show = false;
+                        }
+                    }
                 });
                 scope.isright = function(page) {
                     if(page.props && page.props.right && page.props.right === true) return true;
