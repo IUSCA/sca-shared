@@ -11,7 +11,7 @@
     </a>
     <ul class="dropdown-menu" ng-if="page.submenu">
         <li ng-repeat="subpage in page.submenu" 
-            ng-if="subpage.show != false"
+            ng-if="subpage._show != false"
             ng-class="{active: active == subpage.id, divider: subpage.separator, 'dropdown-header': subpage.header}">
             <a href="{{subpage.url}}" ng-if="subpage.url">
                 {{subpage.label}}
@@ -36,7 +36,7 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li ng-repeat="page in menu" 
-                ng-if="!isright(page) && page.show != false"
+                ng-if="!isright(page) && page._show != false"
                 ng-class="{active: active == page.id}" 
                 ng-include="'menuitem.tmpl'"></li>
             <!--
@@ -55,7 +55,7 @@
             -->
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li ng-repeat="page in menu" ng-if="isright(page) && page.show != false" ng-class="{active: active == page.id}"
+            <li ng-repeat="page in menu" ng-if="isright(page) && page._show != false" ng-class="{active: active == page.id}"
                 ng-click="go(page.url)" ng-include="'menuitem.tmpl'"></li>
             <!--
             <li><a href="../navbar/">Default</a></li>

@@ -242,6 +242,21 @@
       };
     });
 
+    function init_menu(scope) {
+        var user_scope = {common: []}; //empty for guest
+        if(scope.user) user_scope = scope.user.scopes;  
+        scope.menu.forEach(function(m) {
+            if(typeof m.show == 'function') {
+                try {
+                    m._show = m.show(user_scope);
+                    //console.log(m.show);
+                } catch(e) {
+                    m._show = false;
+                }
+            }
+        });
+    }
+
     sca.directive('scaMenutab', function() {
         return {
             restrict: 'E',
@@ -250,17 +265,8 @@
             //templateUrl: dirname().replace('shared.js', 'menubar.html'),
             templateUrl: '../shared/menutab.html', //TODO - make this configurable!
             link: function (scope, element) {
-                var user_scope = {common: []}; //empty for guest
-                if(scope.user) user_scope = scope.user.scopes;  
-                //call show if it's function and convert to true/false based on user scope provided
-                scope.menu.forEach(function(m) {
-                    if(typeof m.show == 'function') {
-                        try {
-                            m.show = m.show(user_scope);
-                        } catch(e) {
-                            m.show = false;
-                        }
-                    }
+                scope.$watch('user', function() {
+                    init_menu(scope);
                 });
                 scope.go = function(url) {
                     document.location = url;
@@ -268,6 +274,7 @@
             }
         };
     });
+
 
     sca.directive('scaMenubar', function() {
         return {
@@ -278,16 +285,9 @@
             templateUrl: '../shared/menubar.html', //TODO - make this configurable!
             link: function (scope, element, attrs) {
                 //if(!scope.menu) return; //menu not loaded(yet?)
-                var user_scope = {common: []}; //empty for guest
-                if(scope.user) user_scope = scope.user.scopes;  
-                scope.menu.forEach(function(m) {
-                    if(typeof m.show == 'function') {
-                        try {
-                            m.show = m.show(user_scope);
-                        } catch(e) {
-                            m.show = false;
-                        }
-                    }
+                //init();
+                scope.$watch('user', function() {
+                    init_menu(scope);
                 });
                 scope.isright = function(page) {
                     if(page.props && page.props.right && page.props.right === true) return true;
