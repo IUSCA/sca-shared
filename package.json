@@ -17,7 +17,7 @@
     "Progress"
   ],
   "author": "Soichi Hayashi <hayashis@iu.edu>",
-  "license": "BSD",
+  "license": "MIT",
   "dependencies": {
     "express": "~4.13.3",
     "express-jwt": "~3.0.1",

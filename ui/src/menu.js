@@ -1,9 +1,6 @@
 (function() {
     'use strict';
-    var sca = angular.module('sca-shared.menu', [
-        //'toaster',
-    ]);
-
+    var sca = angular.module('sca-shared.menu', []);
     sca.constant('scaMenu', [
         {
             id: "meshconfig",
