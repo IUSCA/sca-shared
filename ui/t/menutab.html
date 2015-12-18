@@ -1,0 +1,6 @@
+<ul class="sca-menutab">
+    <li ng-repeat="page in menu" ng-class="{active: active == page.id}" ng-click="go(page.url)" ng-if="page._show != false">
+        {{page.label}}
+    </li>
+</ul>
+

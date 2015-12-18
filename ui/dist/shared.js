@@ -1,133 +1,5 @@
 (function() {
     'use strict';
-    var sca = angular.module('sca-shared.menu', []);
-    sca.constant('scaMenu', [
-        {
-            id: "meshconfig",
-            label: "MeshConfig Admin",
-            url: "/meshconfig"
-        },
-        {
-            id: "sls",
-            label: "WLCG sLS",
-            url: "https://soichi7.ppa.iu.edu/sls/lookup/records"
-        },
-        {
-            id: "dicom",
-            label: "Dicom QC",
-            url: "/dicom"
-        },
-        {
-            id: "sca",
-            //icon: "<img src='http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=19'>",
-            label: "SCA",
-            submenu: [
-                {
-                    id: "progress",
-                    label: "Progress",
-                    url: "/progress",
-                },
-                {
-                    id: "imagex",
-                    label: "ImageX",
-                    url: "/imagex",
-                },
-                {
-                    id: "websh",
-                    label: "Websh",
-                    url: "/websh",
-                    show: function(scope) {
-                        if(~scope.common.indexOf('user')) return true;
-                        return false;
-                    }
-                },            
-            ] 
-        },
-        {
-            id: "sciapt",
-            //icon: "<img src='http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=19'>",
-            label: "SciApt",
-            submenu: [
-                {
-                    id: "mats",
-                    label: "Compute-O-Mat",
-                    url: "/mats",
-                },
-            ] 
-        },
-
-
-        {
-            id: "user",
-            //icon: "<img src='http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=19'>",
-            _label: {default: "Me", profile: "fullname"},
-            props: { right: true },
-            show: function(scope) {
-                if(~scope.common.indexOf('user')) return true;
-                return false;
-            },
-            submenu: [
-                {
-                    id: "settings",
-                    label: "Settings",
-                    url: "/profile",
-                },
-                { separator: true },
-                //{ header: true, label: "Random Header Here" },
-                {
-                    id: "signout",
-                    label: "Sign Out",
-                    url: "/auth/#/signout",
-                },
-            ] 
-        },
-        {
-            id: "signin",
-            label: "Sign In",
-            url: "/auth",
-            show: function(scope) {
-                if(~scope.common.indexOf('user')) return false;
-                return true;
-            },
-            props: { right: true }
-        },
-        {
-            id: "signup",
-            label: "Sign Up",
-            url: "/auth/#/signup",
-            show: function(scope) {
-                if(~scope.common.indexOf('user')) return false;
-                return true;
-            },
-            props: { right: true }
-        },
-    ]);
-
-    sca.constant('scaSettingsMenu', [
-        {
-            id: "profile",
-            label: "Profile",
-            url: "/profile",
-            show: function(scope) {
-                if(~scope.common.indexOf('user')) return true;
-                return false;
-            }
-        },
-        {
-            id: "account",
-            label: "Account",
-            url: "/auth/#/settings",
-            show: function(scope) {
-                if(~scope.common.indexOf('user')) return true;
-                return false;
-            }
-        },
-    ]);
-
-})();
-
-(function() {
-    'use strict';
     var sca = angular.module('sca-shared', [
         'sca-shared.menu',
         //'toaster',
@@ -213,17 +85,14 @@
         };
     });
 
+    /*
+    //anyone uses this still?
     sca.directive('scaMenulist', function() {
       return {
         restrict: 'E',
         transclude: true,
         scope: {menu: '=', active: '='},
-        templateUrl: dirname().replace('shared.js', 'menulist.html')
-        /*
-        link: function (scope, element) {
-            scope.name = 'Jeff';
-        }
-        */
+        templateUrl: dirname().replace('shared.js', 't/menulist.html')
       };
     });
 
@@ -233,11 +102,12 @@
         restrict: 'E',
         transclude: true,
         scope: {menu: '=', active: '='},
-        templateUrl: dirname().replace('shared.js', 'tab.html'),
+        templateUrl: dirname().replace('shared.js', 't/tab.html'),
         link: function(scope, element) {
         }
       };
     });
+    */
 
     function init_menu(scope) {
         var user_scope = {common: []}; //empty for guest
@@ -260,7 +130,7 @@
             transclude: true,
             scope: {menu: '=', active: '=', user: '='},
             //templateUrl: dirname().replace('shared.js', 'menubar.html'),
-            templateUrl: '../shared/menutab.html', //TODO - make this configurable!
+            templateUrl: '../shared/t/menutab.html', //TODO - make this configurable!
             link: function (scope, element) {
                 scope.$watch('user', function() {
                     init_menu(scope);
@@ -272,14 +142,13 @@
         };
     });
 
-
     sca.directive('scaMenubar', function() {
         return {
             restrict: 'E',
             transclude: true,
             scope: {header: '=', menu: '=', user: '=', active: '=', profile: '='},
             //templateUrl: dirname().replace('shared.js', 'menubar.html'),
-            templateUrl: '../shared/menubar.html', //TODO - make this configurable!
+            templateUrl: '../shared/t/menubar.html', //TODO - make this configurable!
             link: function (scope, element, attrs) {
                 //if(!scope.menu) return; //menu not loaded(yet?)
                 //init();

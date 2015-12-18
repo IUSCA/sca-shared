@@ -85,17 +85,14 @@
         };
     });
 
+    /*
+    //anyone uses this still?
     sca.directive('scaMenulist', function() {
       return {
         restrict: 'E',
         transclude: true,
         scope: {menu: '=', active: '='},
-        templateUrl: dirname().replace('shared.js', 'menulist.html')
-        /*
-        link: function (scope, element) {
-            scope.name = 'Jeff';
-        }
-        */
+        templateUrl: dirname().replace('shared.js', 't/menulist.html')
       };
     });
 
@@ -105,11 +102,12 @@
         restrict: 'E',
         transclude: true,
         scope: {menu: '=', active: '='},
-        templateUrl: dirname().replace('shared.js', 'tab.html'),
+        templateUrl: dirname().replace('shared.js', 't/tab.html'),
         link: function(scope, element) {
         }
       };
     });
+    */
 
     function init_menu(scope) {
         var user_scope = {common: []}; //empty for guest
@@ -132,7 +130,7 @@
             transclude: true,
             scope: {menu: '=', active: '=', user: '='},
             //templateUrl: dirname().replace('shared.js', 'menubar.html'),
-            templateUrl: '../shared/menutab.html', //TODO - make this configurable!
+            templateUrl: '../shared/t/menutab.html', //TODO - make this configurable!
             link: function (scope, element) {
                 scope.$watch('user', function() {
                     init_menu(scope);
@@ -144,14 +142,13 @@
         };
     });
 
-
     sca.directive('scaMenubar', function() {
         return {
             restrict: 'E',
             transclude: true,
             scope: {header: '=', menu: '=', user: '=', active: '=', profile: '='},
             //templateUrl: dirname().replace('shared.js', 'menubar.html'),
-            templateUrl: '../shared/menubar.html', //TODO - make this configurable!
+            templateUrl: '../shared/t/menubar.html', //TODO - make this configurable!
             link: function (scope, element, attrs) {
                 //if(!scope.menu) return; //menu not loaded(yet?)
                 //init();
