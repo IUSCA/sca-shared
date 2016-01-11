@@ -23,6 +23,11 @@
             label: "SCA",
             submenu: [
                 {
+                    id: "scaportal",
+                    label: "Portal",
+                    url: "/sca",
+                },
+                {
                     id: "progress",
                     label: "Progress",
                     url: "/progress",
@@ -37,7 +42,7 @@
                     label: "Websh",
                     url: "/websh",
                     show: function(scope) {
-                        if(~scope.common.indexOf('user')) return true;
+                        if(~scope.sca.indexOf('user')) return true;
                         return false;
                     }
                 },            
@@ -63,7 +68,7 @@
             _label: {default: "Me", profile: "fullname"},
             props: { right: true },
             show: function(scope) {
-                if(~scope.common.indexOf('user')) return true;
+                if(~scope.sca.indexOf('user')) return true;
                 return false;
             },
             submenu: [
@@ -71,6 +76,15 @@
                     id: "settings",
                     label: "Settings",
                     url: "/profile",
+                },
+                {
+                    id: "admin",
+                    label: "Administration",
+                    url: "/auth/#/admin/users",
+                    show: function(scope) {
+                        if(~scope.sca.indexOf('admin')) return true;
+                        return false;
+                    },
                 },
                 { separator: true },
                 //{ header: true, label: "Random Header Here" },
@@ -86,7 +100,7 @@
             label: "Sign In",
             url: "/auth",
             show: function(scope) {
-                if(~scope.common.indexOf('user')) return false;
+                if(~scope.sca.indexOf('user')) return false;
                 return true;
             },
             props: { right: true }
@@ -96,7 +110,7 @@
             label: "Sign Up",
             url: "/auth/#/signup",
             show: function(scope) {
-                if(~scope.common.indexOf('user')) return false;
+                if(~scope.sca.indexOf('user')) return false;
                 return true;
             },
             props: { right: true }
@@ -109,16 +123,28 @@
             label: "Profile",
             url: "/profile",
             show: function(scope) {
-                if(~scope.common.indexOf('user')) return true;
+                if(~scope.sca.indexOf('user')) return true;
                 return false;
             }
         },
         {
             id: "account",
             label: "Account",
-            url: "/auth/#/settings",
+            url: "/auth/#/settings/account",
             show: function(scope) {
-                if(~scope.common.indexOf('user')) return true;
+                if(~scope.sca.indexOf('user')) return true;
+                return false;
+            }
+        },
+    ]);
+
+    sca.constant('scaAdminMenu', [
+        {
+            id: "adminusers",
+            label: "Users",
+            url: "/auth/#/admin/users",
+            show: function(scope) {
+                if(~scope.sca.indexOf('admin')) return true;
                 return false;
             }
         },
