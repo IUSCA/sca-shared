@@ -100,7 +100,8 @@
             label: "Sign In",
             url: "/auth",
             show: function(scope) {
-                if(~scope.sca.indexOf('user')) return false;
+                //negative logic needs to be careful not to throw exception if scope is missing
+                if(scope.sca && ~scope.sca.indexOf('user')) return false;
                 return true;
             },
             props: { right: true }
@@ -110,7 +111,8 @@
             label: "Sign Up",
             url: "/auth/#/signup",
             show: function(scope) {
-                if(~scope.sca.indexOf('user')) return false;
+                //negative logic needs to be careful not to throw exception if scope is missing
+                if(scope.sca && ~scope.sca.indexOf('user')) return false;
                 return true;
             },
             props: { right: true }

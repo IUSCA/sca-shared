@@ -110,7 +110,7 @@
     */
 
     function init_menu(scope) {
-        var user_scope = {common: []}; //empty for guest
+        var user_scope = {}; //empty for guest
         if(scope.user) user_scope = scope.user.scopes;  
         scope.menu.forEach(function(m) {
             if(typeof m.show == 'function') {
