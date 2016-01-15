@@ -109,10 +109,10 @@
     });
     */
 
-    function init_menu(scope) {
+    function init_menu(scope, menu) {
         var user_scope = {}; //empty for guest
         if(scope.user) user_scope = scope.user.scopes;  
-        scope.menu.forEach(function(m) {
+        menu.forEach(function(m) {
             if(typeof m.show == 'function') {
                 try {
                     m._show = m.show(user_scope);
@@ -121,6 +121,7 @@
                     m._show = false;
                 }
             }
+            if(m.submenu) init_menu(scope, m.submenu);
         });
     }
 
@@ -133,7 +134,7 @@
             templateUrl: '../shared/t/menutab.html', //TODO - make this configurable!
             link: function (scope, element) {
                 scope.$watch('user', function() {
-                    init_menu(scope);
+                    init_menu(scope, scope.menu);
                 });
                 scope.go = function(url) {
                     document.location = url;
@@ -153,7 +154,7 @@
                 //if(!scope.menu) return; //menu not loaded(yet?)
                 //init();
                 scope.$watch('user', function() {
-                    init_menu(scope);
+                    init_menu(scope, scope.menu);
                 });
                 scope.isright = function(page) {
                     if(page.props && page.props.right && page.props.right === true) return true;
