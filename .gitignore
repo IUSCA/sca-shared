@@ -1,6 +1,7 @@
 nohup_server.*
 node_modules
-config
+ui/config.js
+api/config
 *.log
 test.sh
 dev.sh

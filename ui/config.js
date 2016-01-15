@@ -22,10 +22,27 @@
             //icon: "<img src='http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=19'>",
             label: "SCA",
             submenu: [
+                /*
                 {
                     id: "scaportal",
                     label: "Portal",
                     url: "/sca",
+                    show: function(scope) {
+                        if(~scope.sca.indexOf('user')) return true;
+                        return false;
+                    }
+                },
+                */
+                {
+                    id: "life",
+                    label: "Life Demo",
+                    url: "/life",
+                    /*
+                    show: function(scope) {
+                        if(~scope.sca.indexOf('user')) return true;
+                        return false;
+                    }
+                    */
                 },
                 {
                     id: "progress",
@@ -46,6 +63,11 @@
                         return false;
                     }
                 },            
+                {
+                    id: "imagex",
+                    label: "ImageX",
+                    url: "/imagex",
+                },
             ] 
         },
         {
