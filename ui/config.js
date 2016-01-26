@@ -63,11 +63,6 @@
                         return false;
                     }
                 },            
-                {
-                    id: "imagex",
-                    label: "ImageX",
-                    url: "/imagex",
-                },
             ] 
         },
         {
@@ -119,7 +114,7 @@
         },
         {
             id: "signin",
-            label: "Sign In",
+            label: "Login",
             url: "/auth",
             show: function(scope) {
                 //negative logic needs to be careful not to throw exception if scope is missing
@@ -155,6 +150,15 @@
             id: "account",
             label: "Account",
             url: "/auth/#/settings/account",
+            show: function(scope) {
+                if(~scope.sca.indexOf('user')) return true;
+                return false;
+            }
+        },
+        {
+            id: "resources",
+            label: "Resources",
+            url: "/sca/#/resources",
             show: function(scope) {
                 if(~scope.sca.indexOf('user')) return true;
                 return false;
