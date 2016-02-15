@@ -95,6 +95,11 @@
                     url: "/profile",
                 },
                 {
+                    id: "groups",
+                    label: "Groups",
+                    url: "/auth/#/groups",
+                },
+                {
                     id: "admin",
                     label: "Administration",
                     url: "/auth/#/admin/users",
@@ -176,6 +181,17 @@
                 return false;
             }
         },
+        /*
+        {
+            id: "admingroups",
+            label: "Groups",
+            url: "/auth/#/admin/groups",
+            show: function(scope) {
+                if(~scope.sca.indexOf('admin')) return true;
+                return false;
+            }
+        },
+        */
     ]);
 
 })();

@@ -147,12 +147,9 @@
         return {
             restrict: 'E',
             transclude: true,
-            scope: {header: '=', menu: '=', user: '=', active: '=', profile: '='},
-            //templateUrl: dirname().replace('shared.js', 'menubar.html'),
+            scope: {header: '=', menu: '=', user: '=', active: '='},
             templateUrl: '../shared/t/menubar.html', //TODO - make this configurable!
             link: function (scope, element, attrs) {
-                //if(!scope.menu) return; //menu not loaded(yet?)
-                //init();
                 scope.$watch('user', function() {
                     init_menu(scope, scope.menu);
                 });
@@ -161,8 +158,8 @@
                     return false;
                 };
                 scope.renderLabel = function(props) {
-                    if(props.profile && scope.profile && scope.profile[props.profile]) {
-                        return scope.profile[props.profile];
+                    if(props.profile && scope.user.profile && scope.user.profile[props.profile]) {
+                        return scope.user.profile[props.profile];
                     }
                     return props.default;
                 };
