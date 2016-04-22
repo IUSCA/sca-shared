@@ -1,28 +1,48 @@
 (function() {
     'use strict';
     var sca = angular.module('sca-shared.menu', []);
+
+    sca.constant('scaSharedConfig', {
+        shared_url: '/shared',  //path to shared ui resources (defaults to "../shared")
+    });
+
     sca.constant('scaMenu', [
         {
             id: "meshconfig",
-            label: "MeshConfig Admin",
-            url: "/meshconfig"
+            label: "MCA",
+            submenu: [
+                {
+                    id: "mca",
+                    label: "MeshConfig Admin",
+                    url: "/meshconfig"
+                },
+                {
+                    id: "sls",
+                    label: "WLCG sLS",
+                    url: "https://soichi7.ppa.iu.edu/sls/lookup/records"
+                },
+            ] 
         },
         {
-            id: "sls",
-            label: "WLCG sLS",
-            url: "https://soichi7.ppa.iu.edu/sls/lookup/records"
-        },
-        {
-            id: "dicom",
-            label: "Dicom QC",
-            url: "/dicom"
+            id: "rady",
+            label: "RADY",
+            submenu: [
+                {
+                    id: "dicom",
+                    label: "Dicom QC",
+                    url: "/dicom"
+                },        {
+                    id: "iibis",
+                    label: "IIBIS",
+                    url: "/iibis"
+                },
+            ]
         },
         {
             id: "sca",
             //icon: "<img src='http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=19'>",
             label: "SCA",
             submenu: [
-                /*
                 {
                     id: "scaportal",
                     label: "Portal",
@@ -32,7 +52,6 @@
                         return false;
                     }
                 },
-                */
                 {
                     id: "life",
                     label: "Life Demo",
@@ -160,6 +179,7 @@
                 return false;
             }
         },
+        /* moved to SCA portal -- since this is really SCA specific
         {
             id: "resources",
             label: "Resources",
@@ -169,6 +189,7 @@
                 return false;
             }
         },
+        */
     ]);
 
     sca.constant('scaAdminMenu', [

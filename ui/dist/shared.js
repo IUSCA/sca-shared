@@ -85,30 +85,6 @@
         };
     });
 
-    /*
-    //anyone uses this still?
-    sca.directive('scaMenulist', function() {
-      return {
-        restrict: 'E',
-        transclude: true,
-        scope: {menu: '=', active: '='},
-        templateUrl: dirname().replace('shared.js', 't/menulist.html')
-      };
-    });
-
-    //anyone uses this still?
-    sca.directive('scaTab', function() {
-      return {
-        restrict: 'E',
-        transclude: true,
-        scope: {menu: '=', active: '='},
-        templateUrl: dirname().replace('shared.js', 't/tab.html'),
-        link: function(scope, element) {
-        }
-      };
-    });
-    */
-
     function init_menu(scope, menu) {
         var user_scope = {}; //empty for guest
         if(scope.user) user_scope = scope.user.scopes;  
@@ -125,13 +101,12 @@
         });
     }
 
-    sca.directive('scaMenutab', function() {
+    sca.directive('scaMenutab', function(scaSharedConfig) {
         return {
             restrict: 'E',
-            transclude: true,
+            //transclude: true,
             scope: {menu: '=', active: '=', user: '='},
-            //templateUrl: dirname().replace('shared.js', 'menubar.html'),
-            templateUrl: '../shared/t/menutab.html', //TODO - make this configurable!
+            templateUrl: (scaSharedConfig.shared_url||"../shared")+'/t/menutab.html', 
             link: function (scope, element) {
                 scope.$watch('user', function() {
                     init_menu(scope, scope.menu);
@@ -143,12 +118,12 @@
         };
     });
 
-    sca.directive('scaMenubar', function() {
+    sca.directive('scaMenubar', function(scaSharedConfig) {
         return {
             restrict: 'E',
-            transclude: true,
+            //transclude: true,
             scope: {header: '=', menu: '=', user: '=', active: '='},
-            templateUrl: '../shared/t/menubar.html', //TODO - make this configurable!
+            templateUrl: (scaSharedConfig.shared_url||"../shared")+'/t/menubar.html', 
             link: function (scope, element, attrs) {
                 scope.$watch('user', function() {
                     init_menu(scope, scope.menu);
@@ -166,5 +141,33 @@
             }
         };
     });
+
+    //tried to use component but coudn't get it to work
+    sca.directive('scaBreadcrumb', function(scaSharedConfig) {
+        return {
+            restrict: 'E',
+            templateUrl: (scaSharedConfig.shared_url||"../shared")+'/t/breadcrumb.html', 
+            scope: {
+                //instid: '=',
+                breads: '=',
+                active: '=',
+            },
+            link: function($scope, elm, attrs, ctrl) {
+                $scope.click = function(bread) {
+                    //document.location = bread.url.replace(":instid", $scope.instid);
+                    document.location = bread.url;
+                }
+            },
+        }
+    });
+
+    /*
+    sca.component('scaSidemenu', {
+        transclude: true,
+        controller: function() {
+        },
+        templateUrl: (scaSharedConfig.shared_url||"../shared")+'/t/sidemenu.html', 
+    });
+    */
 
 })();
