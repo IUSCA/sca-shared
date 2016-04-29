@@ -11,13 +11,43 @@
 .navbar-brand .header-icon img {
   max-height: 35px;
 }
-ul.sca-menutab {
-  list-style: none;
-  padding-left: 25px;
+/*
+@media (min-width: 768px) {
+    .sca-menutab ul {
+        width: 750px;
+    }
+}
+@media (min-width: 992px) {
+    .sca-menutab ul {
+        width: 970px;
+    }
+}
+@media (min-width: 1200px) {
+    .sca-menutab ul {
+        width: 1170px;
+    }
+}
+
+.sca-menutab.sca-menutab-fluid ul {
+    width: inherit;
+}
+
+*/
+.sca-menutab {
   border-bottom: 1px solid #ccc;
   margin-bottom: 10px;
 }
-ul.sca-menutab li {
+.sca-menutab ul {
+  list-style: none;
+  padding-left: 0px;
+  margin-bottom: 0px;
+  /*
+
+        margin-left: auto;
+        margin-right: auto;
+        */
+}
+.sca-menutab ul li {
   font-size: 95%;
   font-weight: bold;
   display: inline-block;
@@ -27,18 +57,18 @@ ul.sca-menutab li {
   color: #aaa;
   transition: border-color 0.5s ease-in-out;
 }
-ul.sca-menutab li:hover {
+.sca-menutab ul li:hover {
   border-color: #008cba;
   /*color: #555;*/
 }
-ul.sca-menutab li.active {
+.sca-menutab ul li.active {
   border-color: #008cba;
   color: #008cba;
 }
-ul.sca-menutab li:not(:first-child) {
+.sca-menutab ul li:not(:first-child) {
   /*
-            border-left: 1px solid gray;
-            */
+                border-left: 1px solid gray;
+                */
 }
 nav.sca-menubar {
   margin-bottom: 0px;

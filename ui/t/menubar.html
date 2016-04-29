@@ -23,7 +23,7 @@
 
 <nav class="sca-menubar navbar navbar-default navbar-static-top">
     <div ng-include="'menuitem.tmpl'"></div>
-    <div class="container-fluid">
+    <div ng-class="{'container-fluid': fluid, 'container': !fluid}">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>

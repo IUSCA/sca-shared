@@ -105,7 +105,7 @@
         return {
             restrict: 'E',
             //transclude: true,
-            scope: {menu: '=', active: '=', user: '='},
+            scope: {menu: '=', active: '=', user: '=', fluid: '='},
             templateUrl: (scaSharedConfig.shared_url||"../shared")+'/t/menutab.html', 
             link: function (scope, element) {
                 scope.$watch('user', function() {
@@ -122,7 +122,7 @@
         return {
             restrict: 'E',
             //transclude: true,
-            scope: {header: '=', menu: '=', user: '=', active: '='},
+            scope: {header: '=', menu: '=', user: '=', active: '=', fluid: '='},
             templateUrl: (scaSharedConfig.shared_url||"../shared")+'/t/menubar.html', 
             link: function (scope, element, attrs) {
                 scope.$watch('user', function() {
