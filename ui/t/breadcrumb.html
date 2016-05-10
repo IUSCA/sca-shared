@@ -1,6 +1,10 @@
-<ul class="sca-breadcrumb">
-    <li ng-repeat="bread in breads" ng-class="{'bread-active': bread.id == active}" ng-click="click(bread)">
-        <span ng-if="!$first"><i class="fa fa-chevron-right"></i>&nbsp;&nbsp;&nbsp;</span>
-        <b>{{bread.label}}</b>
-    </li>
-</ul>
+<div class="sca-breadcrumb">
+    <div ng-class="{'container-fluid': fluid, 'container': !fluid}">
+        <ul>
+            <li ng-repeat="bread in breads" ng-class="{'bread-active': bread.id == active}" ng-click="click(bread)">
+                <span ng-if="!$first"><i class="fa fa-chevron-right"></i>&nbsp;&nbsp;&nbsp;</span>
+                <b>{{bread.label}}</b>
+            </li>
+        </ul>
+    </div>
+</div>

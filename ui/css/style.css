@@ -11,28 +11,6 @@
 .navbar-brand .header-icon img {
   max-height: 35px;
 }
-/*
-@media (min-width: 768px) {
-    .sca-menutab ul {
-        width: 750px;
-    }
-}
-@media (min-width: 992px) {
-    .sca-menutab ul {
-        width: 970px;
-    }
-}
-@media (min-width: 1200px) {
-    .sca-menutab ul {
-        width: 1170px;
-    }
-}
-
-.sca-menutab.sca-menutab-fluid ul {
-    width: inherit;
-}
-
-*/
 .sca-menutab {
   border-bottom: 1px solid #ccc;
   margin-bottom: 10px;
@@ -41,11 +19,6 @@
   list-style: none;
   padding-left: 0px;
   margin-bottom: 0px;
-  /*
-
-        margin-left: auto;
-        margin-right: auto;
-        */
 }
 .sca-menutab ul li {
   font-size: 95%;
@@ -198,24 +171,28 @@ nav.sca-menubar {
   -ms-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
-ul.sca-breadcrumb {
+.sca-breadcrumb {
+  background-color: white;
+  box-shadow: 0px 3px 2px #ddd;
+  padding-top: 8px;
+  height: 60px;
+}
+.sca-breadcrumb ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  padding-left: 20px;
-  box-shadow: 0px 3px 2px #ddd;
 }
-ul.sca-breadcrumb li {
+.sca-breadcrumb ul li {
   display: inline-block;
   margin: 0px;
   padding: 10px;
   color: #ccc;
 }
-ul.sca-breadcrumb li:hover {
+.sca-breadcrumb ul li:hover {
   background-color: #ddd;
   color: white;
   cursor: pointer;
 }
-ul.sca-breadcrumb .bread-active {
+.sca-breadcrumb ul li.bread-active {
   color: #008cba;
 }
