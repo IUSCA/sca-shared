@@ -32,7 +32,10 @@
                 <span class="icon-bar"></span>
             </button>
             <!--<div ng-transclude></div>-->
-            <a ng-if="header" class="navbar-brand" href="{{header.url}}"><span ng-if="header.icon" ng-bind-html="header.icon" class="header-icon"></span>{{header.label}}</a>
+            <a ng-if="header" class="navbar-brand" href="{{header.url}}">
+                <span ng-if="header.icon" ng-bind-html="header.icon" class="header-icon"></span>
+                {{header.label}}
+            </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">

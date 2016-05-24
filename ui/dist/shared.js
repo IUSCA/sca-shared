@@ -2,20 +2,7 @@
     'use strict';
     var sca = angular.module('sca-shared', [
         'sca-shared.menu',
-        //'toaster',
     ]);
-
-    /* doesn't work
-    //http://stackoverflow.com/questions/21103724/angular-directive-templateurl-relative-to-js-file
-    //find the fullpath of "this" script.
-    //idea here is that, the executing script file will always be the last on in the scripts array
-    //(TODO - I need to test this on different browser)
-    function dirname() {
-        var scripts = document.getElementsByTagName("script")
-        console.log("dirname:"+scripts[scripts.length-1].src);
-        return scripts[scripts.length-1].src;
-    }
-    */
 
     //IE's json caching is a very common problem.. I am not sure if I should do this here or not,
     //but for now I am applying this to *all* sca shared users
