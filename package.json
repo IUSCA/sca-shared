@@ -1,6 +1,6 @@
 {
   "name": "sca-shared",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "SCA shared service",
   "directories": {
     "test": "test"
@@ -17,20 +17,5 @@
     "Progress"
   ],
   "author": "Soichi Hayashi <hayashis@iu.edu>",
-  "license": "MIT",
-  "dependencies": {
-    "express": "~4.13.3",
-    "express-jwt": "~3.0.1",
-    "body-parser": "~1.13.3",
-    "winston": "~1.0.1",
-    "supertest": "~1.0.1",
-    "async": "~1.4.2",
-    "express-winston": "~0.3.1",
-    "amqp": "~0.2.4",
-    "underscore": "~1.8.3"
-  },
-  "devDependencies": {
-    "chai": "~3.2.0",
-    "node-uuid": "~1.4.3"
-  }
+  "license": "MIT"
 }

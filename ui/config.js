@@ -44,13 +44,15 @@
             label: "SCA",
             submenu: [
                 {
-                    id: "scaportal",
-                    label: "Portal",
-                    url: "/sca",
+                    id: "wf",
+                    label: "Workflows",
+                    url: "/wf",
+                    /*
                     show: function(scope) {
                         if(~scope.sca.indexOf('user')) return true;
                         return false;
                     }
+                    */
                 },
                 {
                     id: "life",
@@ -179,17 +181,15 @@
                 return false;
             }
         },
-        /* moved to SCA portal -- since this is really SCA specific
         {
             id: "resources",
             label: "Resources",
-            url: "/sca/#/resources",
+            url: "/wf/#/resources",
             show: function(scope) {
                 if(~scope.sca.indexOf('user')) return true;
                 return false;
             }
         },
-        */
     ]);
 
     sca.constant('scaAdminMenu', [

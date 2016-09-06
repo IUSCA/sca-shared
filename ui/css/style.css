@@ -14,6 +14,7 @@
 .sca-menutab {
   border-bottom: 1px solid #ccc;
   margin-bottom: 10px;
+  background-color: white;
 }
 .sca-menutab ul {
   list-style: none;
@@ -59,32 +60,6 @@ nav.sca-menubar {
   bottom: 0px;
   width: 200px;
   color: #fff;
-  /*
-        @media (max-width: 767px) {
-            position: relative;
-            width: 100%;
-            margin-bottom: 10px;
-    
-            .toggle-btn {
-                display: block;
-                cursor: pointer;
-                position: absolute;
-                right: 10px;
-                top: 10px;
-                z-index: 10 !important;
-                padding: 3px;
-                background-color: #ffffff;
-                color: #000;
-                width: 40px;
-                text-align: center;
-            }
-        }
-        @media (min-width: 767px) {
-            .menu-list .menu-content {
-                display: block;
-            }
-        }
-        */
 }
 .sca-sidemenu .sca-sidemenu-menu .menu-list .menu-content {
   display: block;

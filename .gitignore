@@ -5,3 +5,4 @@ api/config
 *.log
 test.sh
 dev.sh
+barn
