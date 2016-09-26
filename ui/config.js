@@ -115,6 +115,7 @@
                     label: "Settings",
                     url: "/profile",
                 },
+                /*
                 {
                     id: "groups",
                     label: "Groups",
@@ -130,12 +131,12 @@
                     },
                 },
                 { separator: true },
-                //{ header: true, label: "Random Header Here" },
                 {
                     id: "signout",
                     label: "Sign Out",
                     url: "/auth/#/signout",
                 },
+                */
             ] 
         },
         {
@@ -190,6 +191,20 @@
                 return false;
             }
         },
+        {
+            id: "groups",
+            label: "Groups",
+            url: "/auth/#/groups",
+        },
+        {
+            id: "users",
+            label: "Users",
+            url: "/auth/#/admin/users",
+            show: function(scope) {
+                if(~scope.sca.indexOf('admin')) return true;
+                return false;
+            },
+        },
     ]);
 
     sca.constant('scaAdminMenu', [
@@ -202,17 +217,6 @@
                 return false;
             }
         },
-        /*
-        {
-            id: "admingroups",
-            label: "Groups",
-            url: "/auth/#/admin/groups",
-            show: function(scope) {
-                if(~scope.sca.indexOf('admin')) return true;
-                return false;
-            }
-        },
-        */
     ]);
 
 })();

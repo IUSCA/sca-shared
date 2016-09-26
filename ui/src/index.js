@@ -86,6 +86,10 @@
     });
 
     function init_menu(scope, menu) {
+        if(!menu) {
+            console.log("init_menu called with missing menu");
+            return;
+        }
         var user_scope = {}; //empty for guest
         if(scope.user) user_scope = scope.user.scopes;  
         menu.forEach(function(m) {
