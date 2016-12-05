@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:soichih/sca-setting.git"
+    "url": "git@github.com:soichih/sca-shared.git"
   },
   "keywords": [
     "SCA",
