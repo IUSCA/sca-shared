@@ -1,8 +1,2 @@
-nohup_server.*
-node_modules
-ui/config.js
-api/config
-*.log
-test.sh
-dev.sh
+config.js
 barn
