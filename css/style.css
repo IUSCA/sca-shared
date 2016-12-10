@@ -258,10 +258,11 @@ nav.sca-menubar {
   bottom: 0px;
 }
 .sca-sidebar-page .subbar .subbar-list .subbar-list-item {
-  padding: 5px 20px;
+  padding: 3px 20px;
   box-sizing: border-box;
   border: 3px solid transparent;
-  /*box-shadow: 0px -1px 1px #eee;*/
+  /*border-bottom: 1px solid #eee;*/
+  box-shadow: 0px -1px 1px #eee;
 }
 .sca-sidebar-page .subbar .subbar-list .subbar-list-item .list-header {
   font-size: 16px;
@@ -288,6 +289,9 @@ nav.sca-menubar {
   }
   .sca-sidebar .subbar-opener {
     display: block;
+  }
+  .sca-sidebar-page {
+    padding-left: 40px;
   }
   .sca-sidebar-page .subbar {
     display: none;

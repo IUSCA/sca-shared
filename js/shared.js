@@ -78,7 +78,7 @@
             show: function(toaster) {
                 var messages = getMessages();
                 messages.forEach(function(message) {
-                    toaster.pop(message.type, message.message);
+                    toaster.pop(message.type, message.message);//, tapToDismiss: true);
                 }); 
                 setMessages([]);
             }
