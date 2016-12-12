@@ -277,6 +277,18 @@ nav.sca-menubar {
 .sca-sidebar-page .subbar .subbar-list .subbar-list-item.active {
   border: 3px solid #ddd;
 }
+.sca-sidebar-page .subbar-content {
+  margin-left: 350px;
+  overflow-x: hidden;
+}
+.sca-sidebar-page .subbar-content .fixed-top {
+  left: 0px;
+  right: 0px;
+  margin-left: 430px;
+}
+.sca-sidebar-page .subbar-content .fixed-top h2 {
+  padding-left: 20px;
+}
 @media screen and (max-width: 1200px) {
   .sca-sidebar .menu {
     width: 40px;
@@ -305,8 +317,10 @@ nav.sca-menubar {
     margin-left: 0px;
   }
   .sca-sidebar-page .subbar-content .fixed-top {
-    left: 55px;
-    right: 15px;
+    margin-left: 40px;
+  }
+  .sca-sidebar-page .subbar-content .fixed-top h2 {
+    padding-left: 15px;
   }
   .sca-sidebar-page .margin30 {
     margin: 0px 15px;
