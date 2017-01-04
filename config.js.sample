@@ -115,28 +115,6 @@
                     label: "Settings",
                     url: "/profile",
                 },
-                /*
-                {
-                    id: "groups",
-                    label: "Groups",
-                    url: "/auth/#/groups",
-                },
-                {
-                    id: "admin",
-                    label: "Administration",
-                    url: "/auth/#/admin/users",
-                    show: function(scope) {
-                        if(~scope.sca.indexOf('admin')) return true;
-                        return false;
-                    },
-                },
-                { separator: true },
-                {
-                    id: "signout",
-                    label: "Sign Out",
-                    url: "/auth/#/signout",
-                },
-                */
             ] 
         },
         {
@@ -153,7 +131,7 @@
         {
             id: "signup",
             label: "Sign Up",
-            url: "/auth/#/signup",
+            url: "/auth/#!/signup",
             show: function(scope) {
                 //negative logic needs to be careful not to throw exception if scope is missing
                 if(scope.sca && ~scope.sca.indexOf('user')) return false;
@@ -176,7 +154,7 @@
         {
             id: "account",
             label: "Account",
-            url: "/auth/#/settings/account",
+            url: "/auth/#!/settings/account",
             show: function(scope) {
                 if(~scope.sca.indexOf('user')) return true;
                 return false;
@@ -185,7 +163,7 @@
         {
             id: "resources",
             label: "Resources",
-            url: "/wf/#/resources",
+            url: "/wf/#!/resources",
             show: function(scope) {
                 if(~scope.sca.indexOf('user')) return true;
                 return false;
@@ -194,12 +172,12 @@
         {
             id: "groups",
             label: "Groups",
-            url: "/auth/#/groups",
+            url: "/auth/#!/groups",
         },
         {
             id: "users",
             label: "Users",
-            url: "/auth/#/admin/users",
+            url: "/auth/#!/admin/users",
             show: function(scope) {
                 if(~scope.sca.indexOf('admin')) return true;
                 return false;
@@ -211,7 +189,7 @@
         {
             id: "adminusers",
             label: "Users",
-            url: "/auth/#/admin/users",
+            url: "/auth/#!/admin/users",
             show: function(scope) {
                 if(~scope.sca.indexOf('admin')) return true;
                 return false;

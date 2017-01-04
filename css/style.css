@@ -296,7 +296,7 @@ nav.sca-menubar {
 .sca-sidebar-page .subbar-content .fixed-top h2 {
   padding-left: 20px;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1000px) {
   .sca-sidebar .menu {
     width: 40px;
   }
