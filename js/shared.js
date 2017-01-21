@@ -110,7 +110,8 @@
             restrict: 'E',
             //transclude: true,
             scope: {menu: '=', active: '=', user: '=', fluid: '='},
-            templateUrl: (scaSharedConfig.shared_url||"../shared")+'/t/menutab.html', 
+            //templateUrl: (scaSharedConfig.shared_url||"../shared")+'/t/menutab.html', 
+            templateUrl: 'node_modules/sca-shared/t/menutab.html', 
             link: function (scope, element) {
                 scope.$watch('user', function() {
                     init_menu(scope, scope.menu);
@@ -127,7 +128,8 @@
             restrict: 'E',
             //transclude: true,
             scope: {header: '=', menu: '=', user: '=', active: '=', fluid: '='},
-            templateUrl: (scaSharedConfig.shared_url||"../shared")+'/t/menubar.html', 
+            //templateUrl: (scaSharedConfig.shared_url||"../shared")+'/t/menubar.html', 
+            templateUrl: 'node_modules/sca-shared/t/menubar.html', 
             link: function (scope, element, attrs) {
                 scope.$watch('user', function() {
                     init_menu(scope, scope.menu);
@@ -146,11 +148,13 @@
         };
     });
 
+    /*
     //tried to use component but coudn't get it to work
     sca.directive('scaBreadcrumb', function(scaSharedConfig) {
         return {
             restrict: 'E',
-            templateUrl: (scaSharedConfig.shared_url||"../shared")+'/t/breadcrumb.html', 
+            //templateUrl: (scaSharedConfig.shared_url||"../shared")+'/t/breadcrumb.html', 
+            templateUrl: 'node_modules/sca-shared/t/breadcrumb.html', 
             scope: {
                 //instid: '=',
                 breads: '=',
@@ -164,6 +168,7 @@
             },
         }
     });
+    */
 
     /*
     sca.component('scaSidemenu', {
