@@ -183,6 +183,12 @@
                 return false;
             },
         },
+        {
+            id: "logout",
+            label: "Logout",
+            pullright: true,
+            url: "/auth/#!/logout",
+        },
     ]);
 
     sca.constant('scaAdminMenu', [

@@ -1,7 +1,9 @@
 <div class="sca-menutab">
     <div ng-class="{'container-fluid': fluid, 'container': !fluid}">
         <ul>
-            <li ng-repeat="page in menu" ng-class="{active: active == page.id}" ng-click="go(page.url)" ng-if="page._show != false">
+            <li ng-repeat="page in menu" 
+                ng-class="{active: active == page.id, 'pull-right': page.pullright}" 
+                ng-click="go(page.url)" ng-if="page._show != false">
                 {{page.label}}
             </li>
         </ul>
