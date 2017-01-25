@@ -184,10 +184,10 @@
             },
         },
         {
-            id: "logout",
-            label: "Logout",
+            id: "signout",
+            label: "Signout",
             pullright: true,
-            url: "/auth/#!/logout",
+            url: "/auth/#!/signout",
         },
     ]);
 
