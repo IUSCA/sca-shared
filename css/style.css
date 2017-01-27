@@ -18,6 +18,9 @@
   right: 20px;
   background-color: white;
 }
+.fixed-top-under {
+  padding-top: 150px;
+}
 .sca-menutab {
   border-bottom: 1px solid #ccc;
   background-color: white;
@@ -327,10 +330,14 @@ nav.sca-menubar {
     margin-left: 0px;
   }
   .sca-sidebar-page .subbar-content .fixed-top {
-    margin-left: 40px;
+    margin-left: 0px;
+    position: inherit;
   }
   .sca-sidebar-page .subbar-content .fixed-top h2 {
     padding-left: 15px;
+  }
+  .sca-sidebar-page .subbar-content .fixed-top-under {
+    padding-top: 10px;
   }
   .sca-sidebar-page .margin30 {
     margin: 0px 15px;

@@ -18,6 +18,9 @@
     right: 20px;
     background-color: white;
 }
+.fixed-top-under {
+    padding-top: 150px;
+}
 
 .sca-menutab {
     border-bottom: 1px solid #ccc;
@@ -334,7 +337,6 @@ nav.sca-menubar {
             }
         }
     }
-
 }
 
 @media screen and (max-width: 1000px) {
@@ -369,10 +371,14 @@ nav.sca-menubar {
         .subbar-content {
             margin-left: 0px;
             .fixed-top {
-                margin-left: 40px;
+                margin-left: 0px;
+                position: inherit;
                 h2 {
                     padding-left: 15px;
                 }
+            }
+            .fixed-top-under {
+                padding-top: 10px;
             }
         }
         .margin30 {
