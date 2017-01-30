@@ -265,7 +265,7 @@ nav.sca-menubar {
 .sca-sidebar-page .subbar .subbar-list {
   overflow-x: hidden;
   overflow-y: auto;
-  width: 350px;
+  width: 349px;
   position: fixed;
   top: 130px;
   bottom: 0px;
