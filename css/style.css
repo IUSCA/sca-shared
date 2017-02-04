@@ -288,7 +288,7 @@ nav.sca-menubar {
   background-color: #eee;
 }
 .sca-sidebar-page .subbar .subbar-list .subbar-list-item.active {
-  border: 3px solid #ddd;
+  border: 3px solid #ccc;
 }
 .sca-sidebar-page .subbar-content {
   margin-left: 350px;
@@ -334,7 +334,7 @@ nav.sca-menubar {
     position: inherit;
   }
   .sca-sidebar-page .subbar-content .fixed-top h2 {
-    padding-left: 15px;
+    padding-left: inherit;
   }
   .sca-sidebar-page .subbar-content .fixed-top-under {
     padding-top: 10px;
