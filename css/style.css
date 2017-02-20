@@ -18,6 +18,9 @@
   right: 20px;
   background-color: white;
 }
+.fixed-top hr {
+  border-color: #eee;
+}
 .fixed-top-under {
   padding-top: 150px;
 }
@@ -295,8 +298,11 @@ nav.sca-menubar {
   overflow-x: hidden;
 }
 .sca-sidebar-page .subbar-content .fixed-top {
-  left: 0px;
-  right: 0px;
+  /*
+            left: 0px;
+            right: 0px;
+            */
+  left: 20px;
   margin-left: 430px;
 }
 .sca-sidebar-page .subbar-content .fixed-top h2 {
