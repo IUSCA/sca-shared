@@ -298,15 +298,12 @@ nav.sca-menubar {
   overflow-x: hidden;
 }
 .sca-sidebar-page .subbar-content .fixed-top {
-  /*
-            left: 0px;
-            right: 0px;
-            */
   left: 20px;
   margin-left: 430px;
 }
 .sca-sidebar-page .subbar-content .fixed-top h2 {
-  padding-left: 20px;
+  /*conneval doesn't want it*/
+  /*padding-left: 20px;*/
 }
 @media screen and (max-width: 1000px) {
   .sca-sidebar .menu {
