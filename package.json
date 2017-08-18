@@ -1,6 +1,6 @@
 {
   "name": "sca-shared",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "SCA shared service",
   "directories": {
     "test": "test"

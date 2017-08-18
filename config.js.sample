@@ -7,98 +7,23 @@
     });
 
     sca.constant('scaMenu', [
-        {
-            id: "meshconfig",
-            label: "MCA",
-            submenu: [
-                {
-                    id: "mca",
-                    label: "MeshConfig Admin",
-                    url: "/meshconfig"
-                },
-                {
-                    id: "sls",
-                    label: "WLCG sLS",
-                    url: "https://soichi7.ppa.iu.edu/sls/lookup/records"
-                },
-            ] 
-        },
-        {
-            id: "rady",
-            label: "RADY",
-            submenu: [
-                {
-                    id: "dicom",
-                    label: "Dicom QC",
-                    url: "/dicom"
-                },        {
-                    id: "iibis",
-                    label: "IIBIS",
-                    url: "/iibis"
-                },
-            ]
-        },
-        {
-            id: "sca",
-            //icon: "<img src='http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=19'>",
-            label: "SCA",
-            submenu: [
-                {
-                    id: "wf",
-                    label: "Workflows",
-                    url: "/wf",
-                    /*
-                    show: function(scope) {
-                        if(~scope.sca.indexOf('user')) return true;
-                        return false;
-                    }
-                    */
-                },
-                {
-                    id: "life",
-                    label: "Life Demo",
-                    url: "/life",
-                    /*
-                    show: function(scope) {
-                        if(~scope.sca.indexOf('user')) return true;
-                        return false;
-                    }
-                    */
-                },
-                {
-                    id: "progress",
-                    label: "Progress",
-                    url: "/progress",
-                },
-                {
-                    id: "imagex",
-                    label: "ImageX",
-                    url: "/imagex",
-                },
-                {
-                    id: "websh",
-                    label: "Websh",
-                    url: "/websh",
-                    show: function(scope) {
-                        if(~scope.sca.indexOf('user')) return true;
-                        return false;
-                    }
-                },            
-            ] 
-        },
-        {
-            id: "sciapt",
-            //icon: "<img src='http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=19'>",
-            label: "SciApt",
-            submenu: [
-                {
-                    id: "mats",
-                    label: "Compute-O-Mat",
-                    url: "/mats",
-                },
-            ] 
-        },
-
+	{
+	    id: "wf",
+	    label: "Workflows",
+	    url: "/wf",
+	    /*
+	    show: function(scope) {
+		if(~scope.sca.indexOf('user')) return true;
+		return false;
+	    }
+	    */
+	},
+	{
+	    id: "progress",
+	    label: "Progress",
+	    url: "/progress",
+	},
+    
 
         {
             id: "user",
