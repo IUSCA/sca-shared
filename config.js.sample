@@ -7,22 +7,22 @@
     });
 
     sca.constant('scaMenu', [
-	{
-	    id: "wf",
-	    label: "Workflows",
-	    url: "/wf",
-	    /*
-	    show: function(scope) {
-		if(~scope.sca.indexOf('user')) return true;
-		return false;
-	    }
-	    */
-	},
-	{
-	    id: "progress",
-	    label: "Progress",
-	    url: "/progress",
-	},
+        {
+            id: "wf",
+            label: "Workflows",
+            url: "/wf",
+            /*
+            show: function(scope) {
+            if(~scope.sca.indexOf('user')) return true;
+            return false;
+            }
+            */
+        },
+        {
+            id: "progress",
+            label: "Progress",
+            url: "/progress",
+        },
     
 
         {
@@ -104,7 +104,7 @@
             label: "Users",
             url: "/auth/#!/admin/users",
             show: function(scope) {
-                if(~scope.sca.indexOf('admin')) return true;
+                if(~scope.auth.indexOf('admin')) return true;
                 return false;
             },
         },
@@ -122,7 +122,7 @@
             label: "Users",
             url: "/auth/#!/admin/users",
             show: function(scope) {
-                if(~scope.sca.indexOf('admin')) return true;
+                if(~scope.auth.indexOf('admin')) return true;
                 return false;
             }
         },
